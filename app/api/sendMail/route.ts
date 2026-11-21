@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     SMTP_PASS,
     SMTP_FROM_NAME,
     SMTP_FROM_EMAIL,
-    SMTP_RECEIPTIENT_EMAIL
+    SMTP_RECEIPTIENT_EMAIL,
   } = process.env
 
   const port = Number(SMTP_PORT)

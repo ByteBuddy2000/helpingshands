@@ -31,16 +31,13 @@ export default function RootLayout({
       <body cz-shortcut-listen="true">
         <ThemeProvider>
           <TooltipProvider>
-
             <SessionWrapper>
               <BrowserProtection />
 
               {children}
               <ScrollToTop />
-
             </SessionWrapper>
           </TooltipProvider>
-
         </ThemeProvider>
       </body>
     </html>

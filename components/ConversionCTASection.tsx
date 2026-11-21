@@ -1,6 +1,14 @@
 "use client"
 import { useState } from "react"
-import { CheckCircle2, Clock3, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react"
+import {
+  CheckCircle2,
+  Clock3,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Send,
+} from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
 import { BRAND_CONTACT, ENQUIRY_TOPICS } from "../data/aboutData"
 import { RevealFromBottom, StaggerGroup, StaggerItem } from "./ScrollReveal"

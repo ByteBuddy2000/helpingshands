@@ -1,9 +1,16 @@
 "use client"
-import { ArrowRight, HandHeart, HeartHandshake, ShieldCheck, Users } from "lucide-react"
+import {
+  ArrowRight,
+  HandHeart,
+  HeartHandshake,
+  ShieldCheck,
+  Users,
+} from "lucide-react"
 import { motion } from "framer-motion"
 import { BRAND_CONTACT } from "../data/aboutData"
 import { ResilientImage } from "./ResilientImage"
 import { RevealFromBottom } from "./ScrollReveal"
+import { HeroArt } from "./HeroArt"
 
 interface HeroSectionProps {
   onPrimaryCta: () => void
@@ -44,9 +51,13 @@ export function HeroSection({
           {/* Left editorial copy with staggered bottom-to-top reveal */}
           <div className="flex flex-col justify-center lg:col-span-6">
             <RevealFromBottom immediate distance={24} delay={0.02}>
-              <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-[#C6B993] uppercase">
+              {/* <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-[#C6B993] uppercase">
                 <span className="h-px w-7 bg-[#C6B993]" aria-hidden="true" />
                 <span>About Helping Hands Company · UK Branch</span>
+              </div> */}
+              <div className="mb-6 inline-flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] text-[#D8C18B] uppercase">
+                <span className="h-2 w-2 rounded-full bg-[#A95F48] shadow-[0_0_12px_#A95F48]" />
+                A Little Help Can Go a Long Way
               </div>
             </RevealFromBottom>
 
@@ -75,7 +86,6 @@ export function HeroSection({
                 className="font-display text-[clamp(2.8rem,5.5vw,4.5rem)] leading-[1.06] font-extrabold tracking-[-0.045em] text-white"
               >
                 Together,
-
                 <br />
                 <em className="font-serif font-normal text-[#D8C18B]">
                   We Make a Difference.
@@ -84,12 +94,15 @@ export function HeroSection({
             </RevealFromBottom>
 
             <RevealFromBottom immediate distance={32} delay={0.15}>
-              <p className="mt-6 max-w-xl text-base leading-[1.75] text-[#FFFEFA]/88 sm:text-[17px]">
+              {/* <p className="mt-6 max-w-xl text-base leading-[1.75] text-[#FFFEFA]/88 sm:text-[17px]">
                 At Helping Hands Company – UK Branch, we believe meaningful
                 support begins with genuine human presence. We bring together
                 respectful practical guidance, compassionate listening, and
                 trusted local community signposting for people across the United
                 Kingdom.
+              </p> */}
+              <p className="mt-6 max-w-xl text-base leading-[1.75] text-[#FFFEFA]/88 sm:text-[17px]">
+                We believe meaningful support starts with genuine human connection. Through compassionate listening, practical guidance, and trusted connections to local community services, we help people across the United Kingdom feel heard, supported, and empowered.
               </p>
             </RevealFromBottom>
 
@@ -122,14 +135,15 @@ export function HeroSection({
 
             <RevealFromBottom immediate distance={20} delay={0.28}>
               <div className="mt-8 flex items-center gap-2.5 border-t border-[#FFFEFA]/15 pt-5 text-xs text-[#DBCEAC]/90">
-                <ShieldCheck
+                {/* <div className="mt-8 flex items-center gap-2.5 border-t border-[#FFFEFA]/15 pt-5 text-xs text-[#DBCEAC]/90"> */}
+                {/* <ShieldCheck
                   className="h-4 w-4 shrink-0 text-[#C6B993]"
                   aria-hidden="true"
                 />
                 <span>
                   Free to enquire · No application or release fees · Published
                   Director: {BRAND_CONTACT.director}
-                </span>
+                </span> */}
               </div>
             </RevealFromBottom>
           </div>
@@ -172,19 +186,22 @@ export function HeroSection({
                 </p>
               </motion.div>
             </div> */}
+
             {/* Hero Artwork */}
+
+            <HeroArt />
             <div
               aria-label="Illustration representing people supporting one another"
               role="img"
-              className="relative flex min-h-[390px] items-center justify-center sm:min-h-[460px]"
+              // className="relative flex min-h-[390px] items-center justify-center sm:min-h-[460px]"
+              className="relative hidden min-h-[390px] items-center justify-center sm:min-h-[460px]"
             >
               {/* Main Illustration Card */}
               <div className="relative flex h-[320px] w-[280px] items-center justify-center overflow-hidden rounded-lg border border-white/20 bg-gradient-to-br from-[#E5D5AA] via-[#D8C18B] to-[#C6B993] shadow-2xl shadow-black/20 sm:h-[360px] sm:w-[320px]">
-
                 {/* Decorative Sun */}
-                <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full border border-[#172B45]/10 bg-[#F5E8C8]/40" />
+                <div className="absolute -top-12 -right-12 h-48 w-48 rounded-full border border-[#172B45]/10 bg-[#F5E8C8]/40" />
 
-                <div className="absolute -left-16 bottom-[-90px] h-64 w-64 rounded-full bg-[#A95F48]/20 blur-2xl" />
+                <div className="absolute bottom-[-90px] -left-16 h-64 w-64 rounded-full bg-[#A95F48]/20 blur-2xl" />
 
                 {/* Illustration Icon */}
                 <div className="relative z-10 flex h-36 w-36 items-center justify-center rounded-full border border-[#172B45]/10 bg-white/30 shadow-inner sm:h-40 sm:w-40">
@@ -196,7 +213,7 @@ export function HeroSection({
                 </div>
 
                 {/* Illustration Caption */}
-                <div className="absolute bottom-7 left-7 right-7">
+                <div className="absolute right-7 bottom-7 left-7">
                   <span className="text-[9px] font-bold tracking-[0.25em] text-[#8A7040]">
                     COMMUNITY FIRST
                   </span>
@@ -210,7 +227,7 @@ export function HeroSection({
               </div>
 
               {/* Floating Note - Top */}
-              <div className="absolute right-0 top-[12%] flex items-center gap-3 rounded-lg border border-white/15 bg-[#172B45]/90 px-4 py-3 shadow-xl shadow-black/15 backdrop-blur-md sm:-right-2">
+              <div className="absolute top-[12%] right-0 flex items-center gap-3 rounded-lg border border-white/15 bg-[#172B45]/90 px-4 py-3 shadow-xl shadow-black/15 backdrop-blur-md sm:-right-2">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#D8C18B]/15 text-[#D8C18B]">
                   <HeartHandshake size={19} />
                 </div>
@@ -232,7 +249,7 @@ export function HeroSection({
               </div>
 
               {/* Decorative Sparkles */}
-              <span className="absolute left-[12%] top-[12%] text-3xl text-[#D8C18B]">
+              <span className="absolute top-[12%] left-[12%] text-3xl text-[#D8C18B]">
                 ✳
               </span>
 
@@ -240,15 +257,13 @@ export function HeroSection({
                 ✦
               </span>
             </div>
-
-
           </motion.div>
         </div>
       </div>
 
       {/* Bottom brand rhythm bar */}
       <div className="relative z-10 border-t border-[#FFFEFA]/15 bg-[#162842]/55">
-        <div className="mx-auto flex min-h-[48px] max-w-[1200px] flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 text-[11px] font-bold tracking-[0.18em] text-[#DBCEAC] uppercase sm:px-6 lg:px-8">
+        <div className="mx-auto flex min-h-[48px] max-w-[1200px] flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 text-[8px] font-bold tracking-[0.18em] text-[#DBCEAC] uppercase sm:px-6 lg:px-8">
           <span>People-Centred Guidance</span>
           <span aria-hidden="true" className="text-[#C6B993]">
             ·

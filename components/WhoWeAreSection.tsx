@@ -28,7 +28,7 @@ export function WhoWeAreSection({ onLearnMoreClick }: WhoWeAreSectionProps) {
             >
               <ResilientImage
                 src="/assets/images/
-who_we_are_home_visit_1794961490057.jpg"
+hero_uk_caregiver_1794961489470.jpg"
                 alt="A friendly UK care coordinator walking alongside an older gentleman along a sunlit British garden pathway"
                 fallbackTitle="Supporting UK Communities"
                 className="h-full min-h-[300px] w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"

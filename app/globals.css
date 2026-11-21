@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+
+* {
+    user-select: none
+}
+
+/* Blur protected content when the browser loses focus */
+.screenshot-protection-blur {
+  filter: blur(20px) !important;
+  transition: filter 0.15s ease;
+  pointer-events: none !important;
+  user-select: none !important;
+}

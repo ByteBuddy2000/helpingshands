@@ -1,27 +1,36 @@
+// components/Security/BrowserProtection.tsx
 "use client"
 
 import { useEffect } from "react"
 
 export default function BrowserProtection() {
   useEffect(() => {
-    // Disable context menu globally.
+    const body = document.body
+
+    // Disable text selection.
+    body.style.userSelect = "none"
+    body.style.webkitUserSelect = "none"
+
+    // Prevent text highlighting.
+    const handleSelectStart = (event: Event) => {
+      event.preventDefault()
+    }
+
+    // Disable context menu.
     const handleContextMenu = (event: MouseEvent) => {
       event.preventDefault()
     }
 
-    // Block common inspection and source-view shortcuts.
+    // Block common inspection shortcuts.
     const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key.toLowerCase()
 
       const blocked =
-        // F12
         key === "f12" ||
-        // Ctrl + Shift + I / J / C
-        (event.ctrlKey && event.shiftKey && ["i", "j", "c"].includes(key)) ||
-        // Ctrl + U (View Source)
-        (event.ctrlKey && key === "u") ||
-        // Ctrl + Shift + K (Firefox Web Console)
-        (event.ctrlKey && event.shiftKey && key === "k")
+        (event.ctrlKey &&
+          event.shiftKey &&
+          ["i", "j", "c", "k"].includes(key)) ||
+        (event.ctrlKey && ["u", "s"].includes(key))
 
       if (blocked) {
         event.preventDefault()
@@ -36,14 +45,48 @@ export default function BrowserProtection() {
       }
     }
 
+    // Best-effort protection when the page becomes hidden.
+    const handleVisibilityChange = () => {
+      body.classList.toggle(
+        "screenshot-protection-blur",
+        document.hidden
+      )
+    }
+
+    // Blur protected content when the window loses focus.
+    const handleWindowBlur = () => {
+      body.classList.add("screenshot-protection-blur")
+    }
+
+    const handleWindowFocus = () => {
+      if (!document.hidden) {
+        body.classList.remove("screenshot-protection-blur")
+      }
+    }
+
+    document.addEventListener("selectstart", handleSelectStart)
     document.addEventListener("contextmenu", handleContextMenu)
     document.addEventListener("keydown", handleKeyDown, true)
     document.addEventListener("dragstart", handleDragStart)
+    document.addEventListener("visibilitychange", handleVisibilityChange)
+
+    window.addEventListener("blur", handleWindowBlur)
+    window.addEventListener("focus", handleWindowFocus)
 
     return () => {
+      body.style.userSelect = ""
+      body.style.webkitUserSelect = ""
+
+      body.classList.remove("screenshot-protection-blur")
+
+      document.removeEventListener("selectstart", handleSelectStart)
       document.removeEventListener("contextmenu", handleContextMenu)
       document.removeEventListener("keydown", handleKeyDown, true)
       document.removeEventListener("dragstart", handleDragStart)
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
+
+      window.removeEventListener("blur", handleWindowBlur)
+      window.removeEventListener("focus", handleWindowFocus)
     }
   }, [])
 
