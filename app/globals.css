@@ -1,14 +1,32 @@
 @import "tailwindcss";
 
+/* Blur protected content when the browser loses focus */
 
 * {
     user-select: none
 }
 
-/* Blur protected content when the browser loses focus */
 .screenshot-protection-blur {
   filter: blur(20px) !important;
   transition: filter 0.15s ease;
   pointer-events: none !important;
   user-select: none !important;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

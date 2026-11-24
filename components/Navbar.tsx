@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { ArrowRight, MapPin, Menu, X } from "lucide-react"
 import { BRAND_CONTACT, InfoModalKey, NAV_ITEMS } from "../data/aboutData"
+import Image from "next/image"
+import Link from "next/link"
 
 interface NavbarProps {
   onOpenInfo: (key: InfoModalKey) => void
@@ -34,7 +36,7 @@ export function Navbar({ onOpenInfo, onContactClick }: NavbarProps) {
   return (
     <div id="top">
       {/* Preserved Top Strip */}
-      <div className="bg-[#162842] text-[#DBCEAC]">
+      <div className="hidden bg-[#162842] text-[#DBCEAC]">
         <div className="mx-auto flex min-h-[34px] max-w-[1200px] items-center justify-between px-4 text-[10px] font-bold tracking-[0.15em] sm:px-6 lg:px-8">
           <span>{BRAND_CONTACT.tagline}</span>
           <span className="inline-flex items-center gap-1.5 tracking-[0.08em]">
@@ -47,18 +49,20 @@ export function Navbar({ onOpenInfo, onContactClick }: NavbarProps) {
       {/* Preserved Warm Ivory Header */}
       <header className="relative z-30 border-b border-[#e8e2d5] bg-[#FFFEFA]">
         <div className="mx-auto flex h-[84px] max-w-[1200px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-          <a
+          <Link
             href="#top"
             onClick={() => setMobileOpen(false)}
             className="inline-flex shrink-0 items-center focus-visible:rounded"
             aria-label="Helping Hands Company — UK Branch home"
           >
-            <img
+            <Image
               src="/resources/helping-hands-logo.png"
+              width={180}
+              height={60}
               alt="Helping Hands Company — Together, We Make a Difference"
               className="block h-[60px] w-[180px] max-w-[54vw] object-contain object-left sm:h-[70px] sm:w-[224px]"
             />
-          </a>
+          </Link>
 
           <button
             type="button"

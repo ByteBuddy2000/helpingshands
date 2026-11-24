@@ -47,7 +47,7 @@ export default function RootLayout({
         <ThemeProvider>
           <TooltipProvider>
             <SessionWrapper>
-              <BrowserProtection />
+              {/* <BrowserProtection /> */}
 
               {children}
               <ScrollToTop />

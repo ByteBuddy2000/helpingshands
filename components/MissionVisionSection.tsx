@@ -54,7 +54,7 @@ export function MissionVisionSection() {
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-[#e5dfd2] pt-5 text-xs font-semibold text-[#627285]">
+              <div className="hidden mt-8 border-t border-[#e5dfd2] pt-5 text-xs font-semibold text-[#627285]">
                 Grounded in openness about what support is available and what
                 remains subject to confirmation.
               </div>
@@ -89,7 +89,7 @@ export function MissionVisionSection() {
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-[#FFFEFA]/15 pt-5 text-xs font-semibold text-[#DBCEAC]">
+              <div className="hidden mt-8 border-t border-[#FFFEFA]/15 pt-5 text-xs font-semibold text-[#DBCEAC]">
                 Building stronger local solidarity through attentive listening
                 and trusted signposting.
               </div>

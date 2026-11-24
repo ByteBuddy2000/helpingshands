@@ -16,6 +16,9 @@ import { WhyChooseUsSection } from "@/components/WhyChooseUsSection"
 import { ENQUIRY_TOPICS, InfoModalKey } from "@/data/aboutData"
 import ChristmasSection from "@/components/ChristmasSection"
 import Hero2Section from "@/components/Hero2Section"
+import MarqueeStrip from "@/components/MarqueeStrip"
+import FAQ from "@/components/Faq"
+import Programmes from "@/components/Programme"
 
 export default function LandingPage() {
   const [activeInfoKey, setActiveInfoKey] = useState<InfoModalKey | null>(null)
@@ -62,6 +65,8 @@ export default function LandingPage() {
             onLearnMoreClick={() => scrollToSection("#core-values")}
           />
 
+          <MarqueeStrip />
+
           <ChristmasSection />
 
           <MissionVisionSection />
@@ -72,7 +77,10 @@ export default function LandingPage() {
 
           <ApproachSection />
 
-          <CommitmentQualitySection />
+          {/* <CommitmentQualitySection /> */}
+          <Programmes />
+
+          <FAQ />
 
           <ConversionCTASection
             selectedTopic={selectedTopic}

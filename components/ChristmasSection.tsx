@@ -1,3 +1,4 @@
+// components/ChristmasSection.tsx
 import React from "react"
 import Link from "next/link"
 import { ArrowRight, ShieldCheck } from "lucide-react"
@@ -51,17 +52,17 @@ const ChristmasSection = () => {
               className="relative flex min-h-[280px] items-center justify-center"
             >
               {/* Decorative Stars */}
-              <span className="absolute top-4 left-8 text-4xl text-[#C6B993]">
+              <span className="animate animate-pulse absolute top-4 left-8 text-4xl text-[#C6B993]">
                 ✦
               </span>
 
-              <span className="absolute top-10 right-8 text-3xl text-[#D8C18B]">
+              <span className="animate animate-pulse absolute top-10 right-8 text-3xl text-[#D8C18B]">
                 ✧
               </span>
 
               <div className="relative">
                 {/* Gift Box */}
-                <div className="relative h-44 w-48 rounded-sm bg-gradient-to-br from-[#E5D5AA] to-[#C6B993] shadow-xl shadow-black/15 sm:h-52 sm:w-56">
+                <div className="relative h-44 w-48 rounded-sm bg-linear-to-br from-[#E5D5AA] to-[#C6B993] shadow-xl shadow-black/15 sm:h-52 sm:w-56">
                   {/* Vertical Gift Ribbon */}
                   <div className="absolute inset-y-0 left-1/2 w-8 -translate-x-1/2 bg-[#A95F48]" />
 
@@ -70,8 +71,8 @@ const ChristmasSection = () => {
 
                   {/* Gift Bow */}
                   <div className="absolute -top-12 left-1/2 z-10 flex -translate-x-1/2">
-                    <div className="h-12 w-12 -rotate-45 rounded-full border-[10px] border-[#A95F48]" />
-                    <div className="-ml-3 h-12 w-12 rotate-45 rounded-full border-[10px] border-[#A95F48]" />
+                    <div className="animate animate-spin h-12 w-12 -rotate-45 rounded-full border-[10px] border-[#A95F48]" />
+                    <div className="animate animate-spin -ml-3 h-12 w-12 rotate-45 rounded-full border-[10px] border-[#A95F48]" />
                   </div>
                 </div>
 
@@ -80,7 +81,7 @@ const ChristmasSection = () => {
                 </div>
               </div>
 
-              <span className="absolute right-8 bottom-10 text-3xl text-[#C6B993]">
+              <span className="animate animate-bounce absolute right-8 bottom-10 text-3xl text-[#C6B993]">
                 ✦
               </span>
             </div>
