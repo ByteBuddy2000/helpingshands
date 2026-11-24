@@ -17,6 +17,21 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+export const metadata = {
+  title: "helpingshands",
+  description: "helpingshands is a platform that connects people in need with those who can help. We provide a safe and secure environment for users to offer and request assistance, fostering a community of care and support.",
+  keywords: [
+    "helpingshands",
+    "community support",
+    "assistance platform",
+  ],
+    
+  icons: {
+    icon: "/logo.png",
+  },
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
