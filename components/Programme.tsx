@@ -126,7 +126,7 @@ export default function Programmes() {
 
             <div className="grid gap-7 lg:grid-cols-2 lg:items-end">
 
-              <h2 className="text-4xl font-bold leading-[1.12] tracking-[-0.045em] text-[#29483c] sm:text-5xl lg:text-[58px]">
+              <h2 className="text-4xl font-bold leading-[1.12] tracking-[-0.045em] text-[#1A3150] sm:text-5xl lg:text-[58px]">
                 Support shaped around
                 <br />
                 <em className="font-serif font-normal text-[#cbb681]">
@@ -166,7 +166,7 @@ export default function Programmes() {
 
                 </div>
 
-                <h3 className="mb-3 text-xl font-semibold leading-snug tracking-tight text-[#29483c]">
+                <h3 className="mb-3 text-xl font-semibold leading-snug tracking-tight text-[#1A3150]">
                   {title}
                 </h3>
 
@@ -188,11 +188,10 @@ export default function Programmes() {
         <section
           key={section.id}
           id={section.id}
-          className={`px-5 py-20 sm:px-8 lg:px-10 lg:py-28 ${
-            index % 2 === 0
+          className={`px-5 py-20 sm:px-8 lg:px-10 lg:py-28 ${index % 2 === 0
               ? "bg-white"
               : "bg-[#f1eee5]"
-          }`}
+            }`}
         >
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
@@ -202,7 +201,7 @@ export default function Programmes() {
                 {section.kicker}
               </span>
 
-              <h2 className="text-4xl font-bold leading-[1.12] tracking-[-0.045em] text-[#29483c] sm:text-5xl lg:text-[58px]">
+              <h2 className="text-4xl font-bold leading-[1.12] tracking-[-0.045em] text-[#1A3150] sm:text-5xl lg:text-[58px]">
                 {section.title}
                 <br />
 
@@ -232,8 +231,8 @@ export default function Programmes() {
                   href={section.href!}
                   className={
                     section.button
-                      ? "group mt-9 inline-flex items-center gap-4 rounded-full bg-[#29483c] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#1f382e] hover:shadow-lg"
-                      : "group mt-9 inline-flex items-center gap-3 border-b border-[#b49555] pb-2 text-sm font-semibold text-[#29483c] transition-colors hover:text-[#a58b58]"
+                      ? "group mt-9 inline-flex items-center gap-4 rounded-full bg-[#1A3150] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#1f382e] hover:shadow-lg"
+                      : "group mt-9 inline-flex items-center gap-3 border-b border-[#b49555] pb-2 text-sm font-semibold text-[#1A3150] transition-colors hover:text-[#a58b58]"
                   }
                 >
                   {section.linkText}

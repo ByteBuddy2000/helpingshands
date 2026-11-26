@@ -49,7 +49,7 @@ export default function FAQ() {
           </span>
 
           {/* Heading */}
-          <h2 className="mb-8 text-[42px] font-bold leading-[1.08] tracking-[-0.055em] text-[#29483c] sm:text-[52px] md:text-[58px]">
+          <h2 className="mb-8 text-[42px] font-bold leading-[1.08] tracking-[-0.055em] text-[#1A3150] sm:text-[52px] md:text-[58px]">
             Clear answers.
             <br />
 
@@ -80,7 +80,7 @@ export default function FAQ() {
                   >
                     {/* Accordion Arrow */}
                     <span
-                      className={`shrink-0 text-[13px] text-[#29483c] transition-transform duration-200 ${
+                      className={`shrink-0 text-[13px] text-[#1A3150] transition-transform duration-200 ${
                         isOpen ? "rotate-90" : ""
                       }`}
                     >
