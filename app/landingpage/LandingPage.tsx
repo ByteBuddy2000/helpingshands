@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-// import { MotionConfig } from 'motion/react';
+// import { MotionConfig } from 'framer-motion';
 import { ApproachSection } from "@/components/ApproachSection"
 import { BranchInfoModal } from "@/components/BranchInfoModal"
 import { CommitmentQualitySection } from "@/components/CommitmentQualitySection"

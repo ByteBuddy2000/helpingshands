@@ -1,5 +1,5 @@
 import { Award, Gift, Info, ShieldCheck } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { DEMO_ORG, DEMO_PRIZES } from '../../data/christmasDemoData';
 import { RevealFromBottom, StaggerGroup, StaggerItem } from '../ScrollReveal';

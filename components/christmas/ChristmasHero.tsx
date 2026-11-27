@@ -1,5 +1,5 @@
 import { ArrowRight, CalendarDays, ShieldCheck } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { DEMO_ORG } from '../../data/christmasDemoData';
 import { ResilientImage } from '../ResilientImage';

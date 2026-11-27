@@ -1,3 +1,4 @@
+// components/FAQ.tsx
 "use client"
 
 import { useState } from "react"
@@ -36,30 +37,34 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="bg-[#f1eee5] px-5 py-20 sm:px-8 md:py-24 lg:py-28"
+      className="bg-[#fff] px-5 py-20 sm:px-8 md:py-24 lg:py-28"
+      // className="bg-[#f1eee5] px-5 py-20 sm:px-8 md:py-24 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="flex items-center justify-between mx-auto max-w-7xl">
 
         {/* FAQ Content */}
-        <div className="max-w-[850px]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
-          {/* Section Kicker */}
-          <span className="mb-6 block text-[9px] font-bold uppercase tracking-[0.28em] text-[#b49555]">
-            Frequently Asked Questions
-          </span>
-
-          {/* Heading */}
-          <h2 className="mb-8 text-[42px] font-bold leading-[1.08] tracking-[-0.055em] text-[#1A3150] sm:text-[52px] md:text-[58px]">
-            Clear answers.
-            <br />
-
-            <span className="text-[#cbb681]">
-              No surprises.
+          <div className="self-start">
+            {/* Section Kicker */}
+            <span className="mb-6 block text-[9px] font-bold uppercase tracking-[0.28em] text-[#b49555]">
+              Frequently Asked Questions
             </span>
-          </h2>
+
+            {/* Heading */}
+            <h2 className="mb-8 text-[42px] font-bold leading-[1.08] tracking-[-0.055em] text-[#1A3150] sm:text-[52px] md:text-[58px]">
+              Clear answers.
+              <br />
+
+              <span className="text-[#cbb681]">
+                No surprises.
+              </span>
+            </h2>
+
+          </div>
 
           {/* FAQ List */}
-          <div className="border-t border-[#dcd5c5]">
+          <div className="border-[#dcd5c5]">
 
             {FAQ_ITEMS.map((item, index) => {
               const isOpen = activeIndex === index
@@ -80,9 +85,8 @@ export default function FAQ() {
                   >
                     {/* Accordion Arrow */}
                     <span
-                      className={`shrink-0 text-[13px] text-[#1A3150] transition-transform duration-200 ${
-                        isOpen ? "rotate-90" : ""
-                      }`}
+                      className={`shrink-0 text-[13px] text-[#1A3150] transition-transform duration-200 ${isOpen ? "rotate-90" : ""
+                        }`}
                     >
                       ▶
                     </span>
@@ -94,11 +98,10 @@ export default function FAQ() {
 
                   {/* Answer */}
                   <div
-                    className={`grid transition-all duration-300 ease-in-out ${
-                      isOpen
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
+                    className={`grid transition-all duration-300 ease-in-out ${isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                      }`}
                   >
                     <div className="overflow-hidden">
                       <p className="max-w-[820px] pb-[22px] pl-5 text-[13px] leading-[1.8] tracking-[0.005em] text-[#536b7a] sm:text-[14px]">
@@ -111,6 +114,7 @@ export default function FAQ() {
             })}
 
           </div>
+
         </div>
       </div>
     </section>
